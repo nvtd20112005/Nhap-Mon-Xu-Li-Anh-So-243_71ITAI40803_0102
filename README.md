@@ -12,11 +12,7 @@ Trong bài này có 2 nhóm thuật toán chính.
 Đầu tiên là các kỹ thuật xử lý cơ bản trên ảnh, gồm 4 phần nhỏ là: chuyển ảnh sang grayscale, biến đổi âm bản, nhị phân hóa (thresholding), và log transform.
 Tiếp theo là các thuật toán xử lý ảnh bằng bộ lọc, gồm: lọc trung bình (mean filter), lọc trung vị (median filter), phát hiện biên bằng Sobel, và cân bằng histogram.
 ## Giải thích cách hoạt động
-
 Grayscale: thuật toán này dùng để chuyển ảnh màu (RGB) thành ảnh xám. Việc này giúp đơn giản hóa dữ liệu vì ảnh xám chỉ có một kênh độ sáng thay vì ba kênh màu. Trong bài này, ảnh gốc được chuyển sang ảnh xám trước khi áp dụng các bước xử lý tiếp theo.
-
-Python
-
 # chuyển ảnh sang ảnh xám
 ```python
 from PIL import Image
@@ -29,7 +25,6 @@ import numpy as np
 def threshold(img_array, T=128):
     return np.where(img_array > T, 255, 0).astype(np.uint8)
 ```
-
 Mean Filter: dùng để làm mịn ảnh, bằng cách thay mỗi điểm ảnh bằng giá trị trung bình của các pixel xung quanh. Trong bài này, em dùng kernel 3x3 để tính trung bình đều, giúp làm mờ nhẹ và giảm nhiễu.
 ```python
 def mean_filter(img):
