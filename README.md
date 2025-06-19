@@ -25,6 +25,7 @@ import numpy as np
 def threshold(img_array, T=128):
     return np.where(img_array > T, 255, 0).astype(np.uint8)
 ```
+# lọc trung bình
 Mean Filter: dùng để làm mịn ảnh, bằng cách thay mỗi điểm ảnh bằng giá trị trung bình của các pixel xung quanh. Trong bài này, em dùng kernel 3x3 để tính trung bình đều, giúp làm mờ nhẹ và giảm nhiễu.
 ```python
 def mean_filter(img):
